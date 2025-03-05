@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { createWorkspaceSchema } from "../schemas";
@@ -20,6 +21,7 @@ const app = new Hono().post(
       ID.unique(),
       {
         name,
+        userId: user.$id,
       }
     );
     return c.json({ data: workspace });

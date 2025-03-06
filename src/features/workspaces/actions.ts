@@ -15,7 +15,9 @@ export const getWorkspaces = async () => {
       return { documents: [], total: 0 };
     }
     client.setSession(session.value);
+
     const databases = new Databases(client);
+
     const account = new Account(client);
     const user = await account.get();
 
